@@ -2,6 +2,8 @@ class Login
     def initialize
         @browser = Watir::Browser.new :chrome
         @browser.goto 'https://stg.nordstromrack.com/'
+        # @browser = Watir::Browser.new :BROWSER
+        # @browser.goto URL
     end
  
     def self.visit
@@ -14,8 +16,8 @@ class Login
 
     def modalLogin
         @browser.link(text: 'Log In').when_present.click
-        @browser.text_field(name: 'email').set 'ct5@example.com'
-        @browser.text_field(name: 'password').set 'qwerty'
+        @browser.text_field(name: 'email').set 'somebody@example.com'
+        @browser.text_field(name: 'password').set 'change_me'
         @browser.div(class: 'authentication-modal__submit').click
     end
 
